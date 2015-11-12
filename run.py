@@ -3,6 +3,7 @@ import pandas as pd
 import argparse
 import json
 from flask import Flask, jsonify, request
+from flask.ext.cors import CORS
 import os
 
 # Example query strings: 
@@ -14,6 +15,7 @@ import os
 # Routes
 #-------------------------------------------
 app = Flask(__name__)
+cors = CORS(app, resources={r"/output/*": {"origins": "http://opendatakosovo.github.io"}})
 
 @app.route('/', methods=['GET'])
 def index():
