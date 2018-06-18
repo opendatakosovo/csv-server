@@ -15,7 +15,7 @@ import os
 # Routes
 #-------------------------------------------
 app = Flask(__name__)
-cors = CORS(app, resources={r"/output/*": {"origins": "http://opendatakosovo.github.io"}})
+cors = CORS(app, resources={r"/output/*": {"origins": "*"}})
 
 @app.route('/', methods=['GET'])
 def index():
