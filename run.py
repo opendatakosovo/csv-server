@@ -23,7 +23,7 @@ def after_request(response):
   response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
   return response
 
-cors = CORS(app, resources={r"/output/*": {"origins": "*"}})
+#cors = CORS(app, resources={r"/output/*": {"origins": "*"}})
 
 @app.route('/', methods=['GET'])
 def index():
